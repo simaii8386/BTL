@@ -1,47 +1,46 @@
 header{
     padding: 20px;
-    background-color: #77e275;
-    padding: 100px;
+    background-color: #f8faf8;
+    padding: 10px;
 }
 .link {
     list-style: none;
     display: flex;
-    margin-left: 80px;
-    margin-top: 100px;
+    margin-left: 0;
+    padding-left: 0;
 
 }
 .link li a {
     text-decoration: none;
-    color: #080909;
+    color: #0b0f0f;
     margin-left: 5px;
     
 }
 
 .link li::after {
     content: ">";
-    margin-left: 5px;
+    margin-left: 5px; 
 }
 
 .link li:last-child::after {
     content: "";
 }
 
-.link li:last-child a {
-    color: #9b9494; /* Active/current page link */
+.link li:last-child {
+    color: #e5cccc; /* Active/current page link */
 }
 
 
 .body {
     display: flex;
-    padding: 100px;
-    padding-top: 0px;
-    padding-right: 0px;
+    padding: 0 0 100 100px;
+    margin:0;
 }
-
 
 .danhmuc{
     width: 20%;
     padding: 10px;
+    margin-left: 50px;
     border-right: 1px solid #ddd;
 }
 .timkiem
@@ -70,7 +69,7 @@ header{
 .sanpham {
     width: 60%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 10px;
 }
@@ -87,25 +86,16 @@ header{
     height: auto;
 }
 
-.product-item p {
-    margin: 10px 0;
-    font-size: 16px;
+.giacu {
+    text-decoration: line-through;
+    color: rgb(103, 98, 98);
+    margin-right: 10px;
 }
 
-.sp span {
+.giamoi {
+    font-weight: bold;
     color: red;
     font-size: 18px;
-}
-.save{
-    position: absolute; /* Định vị tuyệt đối để đặt giá trên ảnh */
-    top: 310px; /* Khoảng cách từ đầu ảnh */
-    left: 10px; /* Khoảng cách từ bên trái ảnh */
-    background-color: #f20909f7; /* Nền đỏ với độ trong suốt */
-    color: white;
-    padding: 5px 10px; 
-    border-radius: 5px; /* Bo tròn góc */
-    font-weight: bold; 
-    width: 100px;
 }
 footer {
   background-color: #1976d2;
@@ -148,4 +138,53 @@ footer form button {
   border-radius: 4px;
   cursor: pointer;
   margin-left: 20px;
+}
+/* Kích thước mặc định (Desktop lớn) */
+.header {
+    padding: 20px;
+}
+
+.body {
+    padding: 0 0 100 100px;
+}
+
+.danhmuc {
+    width: 20%;
+}
+
+.sanpham {
+    grid-template-columns: repeat(4, 1fr); /* 4 sản phẩm trên mỗi hàng */
+}
+.sp a {
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: inherit; /* Thừa hưởng màu sắc từ parent element */
+}
+/* Media query cho màn hình nhỏ hơn */
+@media (max-width: 992px) {
+    .sanpham {
+        grid-template-columns: repeat(3, 1fr); /* 3 sản phẩm trên mỗi hàng */
+    }
+}
+
+@media (max-width: 768px) {
+    .sanpham {
+        grid-template-columns: repeat(2, 1fr); /* 2 sản phẩm trên mỗi hàng */
+    }
+    .sp {
+        padding: 5px; /* Giảm padding cho màn hình nhỏ */
+    }
+}
+
+@media (max-width: 480px) {
+    .sanpham {
+        grid-template-columns: repeat(1, 1fr); /* 1 sản phẩm trên mỗi hàng */
+    }
+    .sp {
+        padding: 5px;
+    }
+}
+
+/* Đảm bảo thân trang không tràn ra ngoài màn hình nhỏ */
+body, html {
+    overflow-x: hidden;
 }
